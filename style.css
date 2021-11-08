@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    /* Color Variable */
+    --primary-background-color: #C5E4E7;
+    --primary-dark-color: #00474B;
+    --app-background-color: hsl(0, 0%, 100%);
+    --input-container-color: #F3F9FA;
+    --secondary-dark-color: #26C2AE;
+    --lable-tag-font-color: #5E7A7D;
+    /* Typography */
+    --lable-font-size: 1rem;
+    --form-font-size: 1.5rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono', monospace;
+}
+body {
+    background: var(--primary-background-color);
+}
+
+/* Reset HTML  for input number arrow*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input {
+    border: none;
+    border-radius: 5px;
+}
+button {
+    border: none;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  background-color: inherit;
+  border: none;
+  color: var(--primary-dark-color);
+  text-align: right;
+}
+input[type=number]:focus {
+    outline: 1px solid var(--secondary-dark-color);
+}
+input[type=number]::placeholder {
+    text-align: right;
+}
+.round-border-item {
+    border-radius: 5px;
+}
+
+/* Calculator Header */
+.calculator-head {
+    display: flex;
+    justify-content: center;
+}
+.calculator-head > img {
+    margin: 3.125rem 0 2.625rem;
+}
+/* Calculator Application Overall */
+.calculator-ctn {
+    background: var(--app-background-color);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.calculator-form {
+    display: grid;
+    gap: 2rem;
+}
+.calculator-app {
+    display: grid;
+    gap: 2rem;
+}
+.calculator-app label {
+    display: block;
+    margin-bottom: .4rem;
+}
+.calculator-app input[type=number] {
+    padding-right: 1rem;
+    width: 100%;
+}
+/* Bill Section */
+.amount-input-ctn, .people-input-ctn {
+    position: relative;
+}
+.amount-input-ctn img, .people-input-ctn img{
+    position: absolute;
+    top: 50%;
+    left: 1.25rem;
+    transform: translateY(-50%);
+}
+.amount-input-ctn input[type=number], .people-input-ctn input[type=number]{
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+.amount-input-ctn, .people-input-ctn {
+    background: var(--input-container-color);
+}
+
+.label-tag {
+    color: var(--lable-tag-font-color);
+    font-size: var(--lable-font-size);
+    font-weight: 700;
+}
+
+/* Tip Select Section */
+.tip-select-label {
+    grid-column: 1 / -1;
+}
+.button-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+}
+.button-container > button, .button-container > .custom-rate {
+    
+    cursor: pointer;
+    font-size: var(--form-font-size);
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+.tip-rate {
+    background: var(--primary-dark-color);
+    color: var(--app-background-color);
+}
+.custom-rate {
+    background: var(--input-container-color);
+}
+
+.tip-rate > button:hover{
+    background: var(--secondary-dark-color);
+    color:  #00474B;
+}
+.active-rate{
+    background: var(--secondary-dark-color);
+    color:  #00474B;
+}
+
+
+/* Result Display Section */
+.result-display-ctn {
+    background: var(--primary-dark-color);
+    display: grid;
+    gap: 1.5rem;
+    padding: 2.25rem 1.5rem 1.5rem;
+}
+.result-item-ctn {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    font-weight: 700;
+}
+.result-item-ctn :nth-child(1) {
+    color: var(--input-container-color);
+    font-size: 1rem;
+}
+.unit-person {
+    display: block;
+    color: #7F9D9F;
+    font-size: .75rem;
+    margin-top: .25rem;
+}
+.result-item-ctn :nth-child(2) {
+    color: var(--secondary-dark-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+.reset-button {
+    background: var(--secondary-dark-color);
+    color: var(--primary-dark-color);
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: .6rem;
+    text-transform: uppercase;
+    width: 100%;
+}
+.reset-button:hover {
+    color: var(--secondary-dark-color);
+    background-color: #0D686D;
+}
+
+/* Attribution Section */
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
