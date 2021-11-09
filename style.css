@@ -118,7 +118,6 @@ input[type=number]::placeholder {
     grid-template-columns: 1fr 1fr;
 }
 .button-container > button, .button-container > .custom-rate {
-    
     cursor: pointer;
     font-size: var(--form-font-size);
     padding-top: 0.4rem;
@@ -139,6 +138,9 @@ input[type=number]::placeholder {
 .active-rate{
     background: var(--secondary-dark-color);
     color:  #00474B;
+}
+.active-rate.custom-rate {
+    outline: 1px solid var(--secondary-dark-color);
 }
 
 
