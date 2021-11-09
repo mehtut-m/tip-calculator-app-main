@@ -19,41 +19,42 @@
       <img src="./images/logo.svg" alt="Splitter">
     </section>
     <main>    
+
     <section class="calculator-ctn">
       <form action="" class="calculator-form">
-
-      <div class="calculator-app">
-        <div class="bill-ctn">
-          <label class="label-tag" for="">Bill</label>
-          <div class="amount-input-ctn">
-            <img src="images/icon-dollar.svg" alt="">
-            <input class="bill-amount" type="number" placeholder="0">
+      <div>
+        <div class="calculator-app">
+          <div class="bill-ctn">
+            <label class="label-tag" for="">Bill</label>
+            <div class="amount-input-ctn">
+              <img src="images/icon-dollar.svg" alt="">
+              <input class="bill-amount" type="number" min="0" placeholder="0">
+            </div>
           </div>
-        </div>
 
-        <div class="button-container">
-          <h1 class="tip-select-label label-tag">Select Tip %</h1>
-          <button class="tip-rate round-border-item" type="button" value="5">5%</button>
-          <button class="tip-rate round-border-item" type="button" value="10">10%</button>
-          <button class="tip-rate round-border-item" type="button" value="15">15%</button>
-          <button class="tip-rate round-border-item" type="button" value="25">25%</button>
-          <button class="tip-rate round-border-item" type="button" value="50">50%</button>
-          <input type="number" placeholder="Custom" class="tip-rate round-border-item custom-rate">
-        </div>
+          <div class="button-container">
+            <h1 class="tip-select-label label-tag">Select Tip %</h1>
+            <button class="tip-rate round-border-item" type="button" value="5">5%</button>
+            <button class="tip-rate round-border-item" type="button" value="10">10%</button>
+            <button class="tip-rate round-border-item" type="button" value="15">15%</button>
+            <button class="tip-rate round-border-item" type="button" value="25">25%</button>
+            <button class="tip-rate round-border-item" type="button" value="50">50%</button>
+            <input type="number" placeholder="Custom" class="tip-rate round-border-item custom-rate">
+          </div>
 
-        <div class="people-count-ctn">
-          <div class="">
-            <label class="label-tag" for="">Number of People</label>
-            <p class="error-message"></p>
+          <div class="people-count-ctn">
+            <div class="people-label">
+              <label class="label-tag" for="">Number of People</label>
+              <p class="error-message"></p>
+            </div>
+            <div class="people-input-ctn">
+              <img src="images/icon-person.svg" alt="">
+              <input class="people-count" type="number" placeholder="0">
+            </div>
           </div>
-          <div class="people-input-ctn">
-            <img src="images/icon-person.svg" alt="">
-            <input class="people-count" type="number" placeholder="0">
-          </div>
+        
         </div>
-      
       </div>
-
       <div class="result-display-ctn round-border-item">
         <div class="result-item-ctn tip-amount-ctn">
           <p>Tip Amount<span class="unit-person">/person</span></p>

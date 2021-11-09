@@ -10,20 +10,36 @@ document.addEventListener('DOMContentLoaded', () => {
     
     resetDisable();
 
+    //alert user if the people is less than or equal to zero
+    document.querySelector('.people-count').addEventListener('focusout', () => {
+        let target = document.querySelector('.people-count');
+        let errorMessageTarget = document.querySelector('.error-message');
+
+        if (parseInt(target.value) <= 0 || target.value == "") {
+            target.style.border = "1px solid red";
+            errorMessageTarget.textContent = "Can't be zero";
+        }
+        else {
+            target.style.border = "none";
+            errorMessageTarget.textContent = "";
+        }
+    })
+
     //Main Calculator Control 
     function initiateApp () {
         console.log('Calculating')
         resetEnable();
         let billAmount = getPrice();    
-        let peopleCount = getPeople();
+        let peopleCount = parseInt(getPeople());
         let tipRate = getTipRate();
         
         // console.log(billAmount)
         // console.log(peopleCount)
         // console.log(tipRate)
 
-        if(inputVerify(billAmount, peopleCount, tipRate)) {
+        if(inputVerify(billAmount, peopleCount, tipRate) && peopleCount >= 0) {
             //start calculation
+            console.log("ini")
             let calcAmount = calculateTip(billAmount, peopleCount, tipRate.value);
             //update ui
             updateAmount(calcAmount.grandTotal, calcAmount.amountPerPerson)
@@ -41,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return document.querySelector('.bill-amount').value;
     }
     function getPeople() {
+
         return document.querySelector('.people-count').value;
     }
     function getTipRate() {
@@ -108,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //Clear the display tip amount
         document.querySelector('.tip-amount').textContent = '0.00';
         document.querySelector('.total-amount').textContent = '0.00';
+        clearActiveRate();
         resetDisable();
     }
 })

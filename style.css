@@ -21,6 +21,7 @@
 }
 body {
     background: var(--primary-background-color);
+    min-height: 100vh;
 }
 
 /* Reset HTML  for input number arrow*/
@@ -39,7 +40,7 @@ button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
-  background-color: inherit;
+  background-color: var(--input-container-color);
   border: none;
   color: var(--primary-dark-color);
   text-align: right;
@@ -131,7 +132,7 @@ input[type=number]::placeholder {
     background: var(--input-container-color);
 }
 
-.tip-rate > button:hover{
+button.tip-rate:hover{
     background: var(--secondary-dark-color);
     color:  #00474B;
 }
@@ -142,8 +143,14 @@ input[type=number]::placeholder {
 .active-rate.custom-rate {
     outline: 1px solid var(--secondary-dark-color);
 }
-
-
+/* People */
+.people-label {
+    display: flex;
+    justify-content: space-between;
+}
+.error-message {
+    color: red;
+}
 /* Result Display Section */
 .result-display-ctn {
     background: var(--primary-dark-color);
@@ -186,12 +193,62 @@ input[type=number]::placeholder {
     color: var(--secondary-dark-color);
     background-color: #0D686D;
 }
+.reset-button:disabled {
+    background: #0D686D;    
+    color: var(--primary-dark-color);
+
+}
 
 /* Attribution Section */
 
 .attribution { 
     font-size: 11px; text-align: center; 
+    position: absolute;
+    bottom: 0;
+    margin: 2rem 0 1.5rem;
+    text-align: center;
+    width: 100%;
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    .calculator-ctn {
+        box-shadow: 0 2rem 2.5rem rgba(9, 166, 175, 0.20);
+        max-width: 920px;
+    }
+    .calculator-form {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 3rem;
+    }
+    .calculator-form > * {
+        max-width: 528px;
+        width: 50%;
+    }
+    .amount-input-ctn input[type=number], .people-input-ctn input[type=number] {
+        padding: 0.35rem 1rem;
+    }
+    .button-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .custom-rate::placeholder {
+        text-align: center;
+    }
+    /*  */
+    .result-display-ctn {
+        grid-template-rows: auto;
+    }
+    .reset-button {
+        align-self: end;
+        height: 3rem;
+    }
+    
 }
